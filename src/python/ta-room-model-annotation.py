@@ -1,28 +1,29 @@
+# to allow use of dataclasses
+from dataclasses import dataclass
+
+# ----- Definerer modellen ------ 
+@dataclass
 class TA:
     gr_resp: str
     name: str
-    def __init__(self, gr_resp, name):
-        self.name = name
-        self.gr_resp = gr_resp
-    
 
-ta_1 = TA("Gr1, Gr2", "Tom")
-ta_2 = TA("Gr3, Gr4", "Ane")
-ta_3 = TA("Gr5, Gr6", "Ask")
-
+@dataclass
 class GroupWork:
     ta : TA
     room_id : str
-    def __init__(self, ta, room_id):
-        self.ta = ta
-        self.room_id = room_id
     
+# ----- Definerer test data ----
+    
+ta_1 = TA("Gr1, Gr2", "Tom")
+ta_2 = TA("Gr3, Gr4", "Ane")
+ta_3 = TA("Gr5, Gr6", "Ask")
+ 
 gw_1 = GroupWork(ta_1, "F1 022")
 gw_2 = GroupWork(ta_2, "F1 023")
 gw_3 = GroupWork(ta_3, "F1 018")
 gw = [gw_1, gw_2, gw_3]
 
-# Hva er problematisk med denne koden?
+# ------ Definerere funksjon ---- 
 def get_room_nr(ta_name : str, gw_list : list) -> str:
     for elt in gw_list:
         print(elt.ta.name)
