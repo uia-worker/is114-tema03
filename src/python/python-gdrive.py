@@ -4,7 +4,7 @@ import numpy as np
 import altair as alt
 
 # Få tilgang til Google Cloud (gc)
-gc = gs.api_key("") # etterspør API key hos lærer
+gc = gs.api_key("") # se API nøkkel i en Canvas kunngjøring fra 11. oktober 2024
 # Laste inn hele regnarket fra Google Drive i variabelen sh (spread[sh]eet)
 sh = gc.open_by_key('1RYN0i4Zx_UETVuYacgaGfnFcv4l9zd9toQTTdkQkj7g')
 # Velge et spesifikt ark fra regnarket (wsh - [w]ork[sh]eet)
