@@ -30,7 +30,8 @@ for coln in ['y15','y16','y17','y18','y19','y20','y21','y22','y23']:
 # kgdata[['Modalen' in row for row in kgdata['kom']]]
 # Men denne type vasking kan gi problemer, f. eks., hvis man bruker innebygde
 # funksjoner for behandling av strenger, som str og split ...
-kgdata.loc[724:779, 'kom'] = "NaN"
+# kgdata.loc[724:779, 'kom'] = "NaN"
+kgdata.loc[724:779], 'kom'] = float("nan")
 
 # Filtrerer ut kun navn på kommunbe fra kom feltet og setter kom lik denne verdien
 # F. eks. erstatter '3001 Halden' med 'Halden' osv.
