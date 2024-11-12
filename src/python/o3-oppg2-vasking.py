@@ -31,7 +31,7 @@ for coln in ['y15','y16','y17','y18','y19','y20','y21','y22','y23']:
 # Men denne type vasking kan gi problemer, f. eks., hvis man bruker innebygde
 # funksjoner for behandling av strenger, som str og split ...
 # kgdata.loc[724:779, 'kom'] = "NaN"
-kgdata.loc[724:779], 'kom'] = float("nan")
+kgdata.loc[724:779, 'kom'] = ""
 
 # Filtrerer ut kun navn på kommunbe fra kom feltet og setter kom lik denne verdien
 # F. eks. erstatter '3001 Halden' med 'Halden' osv.
@@ -47,5 +47,5 @@ kgdata_no_meta = kgdata.drop(kgdata.index[724:])
 
 write_pandas_dataframe_to_excel_worksheet_with_nan(kgdata_no_meta,
                                                    "ssb-barnehager-2015-2023-alder-1-2-aar.xlsm",
-                                                   "VASKET")
+                                                   "VASKET-REP")
 
